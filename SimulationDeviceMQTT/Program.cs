@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace SimulationDeviceMQTT
 {
 
-    class Program
+    public class Program
     {
         public static int tentative = 0;
 
 
-        static void Main(string[] args)
+        public static void Main()
         {
-            int nomberdevices = 500;
+            int nomberdevices = 2;
             Device[] devices = new Device[nomberdevices];
 
             for (int i = 0; i < nomberdevices; i++)
@@ -30,26 +30,26 @@ namespace SimulationDeviceMQTT
             }
         }
 
-      
 
-        abstract class Data
+
+        public abstract class Data
 
         {
         }
 
-        class SendData : Data
+        public class SendData : Data
 
         {
             Publisher publisher = new Publisher(tentative);
         }
 
-        abstract class Device
+        public abstract class Device
 
         {
             public abstract Data FactoryMethod();
         }
 
-        class SimulationDevice: Device
+        public class SimulationDevice: Device
         {
             public override Data FactoryMethod()
             {
