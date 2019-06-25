@@ -7,49 +7,53 @@ using System.Threading.Tasks;
 namespace SimulationDeviceMQTT
 {
 
-    class Program
+    public class Program
     {
         public static int tentative = 0;
 
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            int nomberdevices = 500;
-            Device[] devices = new Device[nomberdevices];
+            CreateDevice(50);
+        }
 
-            for (int i = 0; i < nomberdevices; i++)
+        public static void CreateDevice(int devicescreate)
+        {
+            Device[] devices = new Device[devicescreate];
+
+            for (int i = 0; i < devicescreate; i++)
             {
-                 devices[i] = new SimulationDevice();
+                devices[i] = new SimulationDevice();
             }
-
             foreach (Device device in devices)
             {
                 tentative = tentative + 1;
                 Data data = device.FactoryMethod();
                 Console.WriteLine("Device created {0}", data.GetType().Name);
             }
+
         }
 
-      
 
-        abstract class Data
+
+        public abstract class Data
 
         {
         }
 
-        class SendData : Data
+        public class SendData : Data
 
         {
             Publisher publisher = new Publisher(tentative);
         }
 
-        abstract class Device
+        public abstract class Device
 
         {
             public abstract Data FactoryMethod();
         }
 
-        class SimulationDevice: Device
+        public class SimulationDevice: Device
         {
             public override Data FactoryMethod()
             {
