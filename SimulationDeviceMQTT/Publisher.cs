@@ -22,23 +22,13 @@ namespace SimulationDeviceMQTT
 
         public  Publisher(int tenta)
         {
-            MqttClient client = new MqttClient("10.154.128.153");
+            MqttClient client = new MqttClient("test.mosquitto.org");
             client.Connect(Guid.NewGuid().ToString());
             client.Publish("hello" , Encoding.UTF8.GetBytes("Hello, I'm a new re" + tenta),MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE,true);
-
             client.MqttMsgPublished += client_MqttMsgPublished;
             //Thread.Sleep(TimeSpan.FromMilliseconds(10));
             Console.WriteLine(tenta);
-
-
-
-
-
         }
-
-
-
-
         void client_MqttMsgPublished(object sender, MqttMsgPublishedEventArgs e)
         {
             MqttClient client = (MqttClient)sender;
@@ -48,17 +38,8 @@ namespace SimulationDeviceMQTT
             {
                 client.Disconnect();
                 Console.WriteLine("Connection Closed");
-
             }
-
-
         }
-
-        static async void Publish(){
-            
-        }
-         
-
     }
 }
 
