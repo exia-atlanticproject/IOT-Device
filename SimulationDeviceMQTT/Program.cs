@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace SimulationDeviceMQTT
 {
-
     public class Program
     {
         public static int tentative = 0;
@@ -44,7 +43,8 @@ namespace SimulationDeviceMQTT
         public class SendData : Data
 
         {
-            Publisher publisher = new Publisher(tentative);
+            Publisher publisher = new Publisher();
+
         }
 
         public abstract class Device
