@@ -9,7 +9,7 @@ using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 
 namespace SimulationDeviceMQTT.Tests
-{ 
+{
     [TestClass()]
     public class PublisherTests
     {
@@ -18,7 +18,7 @@ namespace SimulationDeviceMQTT.Tests
 
         [TestMethod()]
         public void PublisherTest()
-        {            
+        {
         }
 
         [TestMethod()]
@@ -26,7 +26,7 @@ namespace SimulationDeviceMQTT.Tests
         {
             int i;
 
-            for (i=0; i < 10; i++)
+            for (i = 0; i < 10; i++)
             {
                 publisher.ConnectedClient(i);
 
@@ -37,6 +37,20 @@ namespace SimulationDeviceMQTT.Tests
         [TestMethod()]
         public void client_MqttMsgPublishedTest()
         {
+        }
+
+        [TestMethod()]
+        public void RandomNumberTest()
+        {
+            int number=0;
+            bool validation = false;
+           number = publisher.RandomNumber(20, 30);
+            if (number >=20 && number <= 30)
+            {
+                validation = true;
+            }
+
+            Assert.IsTrue(validation);
         }
     }
 }
