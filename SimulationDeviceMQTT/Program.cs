@@ -8,14 +8,11 @@ namespace SimulationDeviceMQTT
 {
     public class Program
     {
-
-
         public static void Main(string[] args)
         {
-            int nomberdevices = 10;
+            int nomberdevices = 100;
             CreateDevice(nomberdevices);
         }
-
         public static void CreateDevice(int number)
         {
             Device[] devices = new Device[number];
@@ -23,15 +20,13 @@ namespace SimulationDeviceMQTT
             {
                 devices[i] = new SimulationDevice();
             }
-            foreach (Device device in devices)
+            Parallel.For(0, number, (i, state) =>
             {
-                Data data = device.FactoryMethod();
-                Console.WriteLine("Device created {0}", data.GetType().Name);
-            }
+                devices[i] = new SimulationDevice();
+                Publisher publisher = new Publisher();
+            });
         }
     }
-
-
 
         public abstract class Data
 
