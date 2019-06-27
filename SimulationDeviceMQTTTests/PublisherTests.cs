@@ -28,7 +28,7 @@ namespace SimulationDeviceMQTT.Tests
 
             for (i = 0; i < 10; i++)
             {
-                publisher.ConnectedClient(i);
+                publisher.ConnectedClient();
 
             }
             Assert.AreEqual(10, i);

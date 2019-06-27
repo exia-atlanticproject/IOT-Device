@@ -14,28 +14,21 @@ namespace SimulationDeviceMQTT
     {
         public Publisher()
         {
-   
-        }
-
-
-        public Publisher(int tenta)
-        {
-            ConnectedClient(tenta);
-            
+            ConnectedClient();
         }
         public int RandomNumber(int min,int max)
         {
             Random random = new Random();
             return random.Next(min, max);
         }
-        public void ConnectedClient(int clients)
+        public void ConnectedClient()
         {
             MqttClient client = new MqttClient("test.mosquitto.org");
             client.Connect(Guid.NewGuid().ToString());
             RandomNumber(-20, 40);
             client.Publish("hello", Encoding.UTF8.GetBytes("temps:" + RandomNumber(-20, 40)), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
             client.MqttMsgPublished += client_MqttMsgPublished;
-            Console.WriteLine(clients);
+  
         }
         public void client_MqttMsgPublished(object sender, MqttMsgPublishedEventArgs e)
         {

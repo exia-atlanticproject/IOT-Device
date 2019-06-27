@@ -8,14 +8,12 @@ namespace SimulationDeviceMQTT
 {
     public class Program
     {
-        public static int tentative = 0;
 
 
         public static void Main(string[] args)
         {
             int nomberdevices = 10;
             CreateDevice(nomberdevices);
-           
         }
 
         public static void CreateDevice(int number)
@@ -27,11 +25,11 @@ namespace SimulationDeviceMQTT
             }
             foreach (Device device in devices)
             {
-                tentative = tentative + 1;
                 Data data = device.FactoryMethod();
                 Console.WriteLine("Device created {0}", data.GetType().Name);
             }
         }
+    }
 
 
 
@@ -60,5 +58,5 @@ namespace SimulationDeviceMQTT
                 return new SendData();
             }
         }
-    }
 }
+
