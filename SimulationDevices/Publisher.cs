@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 
-namespace SimulationDeviceMQTT
-{
+namespace SimulationDevices{
     public class Publisher
     {
         public Publisher()
@@ -43,4 +42,3 @@ namespace SimulationDeviceMQTT
         }
     }
 }
-

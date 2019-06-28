@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace SimulationDeviceMQTT
+namespace SimulationDevices
 {
     public class Program
     {
@@ -43,4 +43,3 @@ namespace SimulationDeviceMQTT
         }
     }
 }
-
