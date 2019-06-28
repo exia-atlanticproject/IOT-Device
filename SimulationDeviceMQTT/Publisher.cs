@@ -23,10 +23,10 @@ namespace SimulationDeviceMQTT
         }
         public void ConnectedClient()
         {
-            MqttClient client = new MqttClient("test.mosquitto.org");
+            MqttClient client = new MqttClient("10.154.128.153");
             client.Connect(Guid.NewGuid().ToString());
             RandomNumber(-20, 40);
-            client.Publish("device/telemetry", Encoding.UTF8.GetBytes("temps:" + RandomNumber(-20, 40)), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
+            client.Publish("calculation", Encoding.UTF8.GetBytes("temps:" + RandomNumber(-20, 40)), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
             client.MqttMsgPublished += client_MqttMsgPublished;
   
         }
