@@ -1,9 +1,0 @@
-C:\Users\maxen\RiderProjects\SimulationDevices\SimulationDevices\bin\Debug\SimulationDevices.exe
-C:\Users\maxen\RiderProjects\SimulationDevices\SimulationDevices\bin\Debug\SimulationDevices.pdb
-C:\Users\maxen\RiderProjects\SimulationDevices\SimulationDevices\bin\Debug\M2Mqtt.Net.dll
-C:\Users\maxen\RiderProjects\SimulationDevices\SimulationDevices\bin\Debug\M2Mqtt.Net.pdb
-C:\Users\maxen\RiderProjects\SimulationDevices\SimulationDevices\obj\Debug\SimulationDevices.csprojAssemblyReference.cache
-C:\Users\maxen\RiderProjects\SimulationDevices\SimulationDevices\obj\Debug\SimulationDevices.csproj.CoreCompileInputs.cache
-C:\Users\maxen\RiderProjects\SimulationDevices\SimulationDevices\obj\Debug\SimulationDevices.csproj.CopyComplete
-C:\Users\maxen\RiderProjects\SimulationDevices\SimulationDevices\obj\Debug\SimulationDevices.exe
-C:\Users\maxen\RiderProjects\SimulationDevices\SimulationDevices\obj\Debug\SimulationDevices.pdb
